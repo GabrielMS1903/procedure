@@ -1,0 +1,13 @@
+
+DELIMITER
+CREATE PROCEDURE gerar_relatorio()
+BEGIN 
+	SELECT 
+    	DATE(data_compra) AS dataa, 
+        COUNT(*) AS quantidade
+    FROM 
+    	vendas
+   	GROUP BY 
+    	DATE(data_compra)
+END
+DELIMITER
